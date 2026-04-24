@@ -7,136 +7,72 @@
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
+    <!-- 
+      TODO: Live Coding Session
+      
+      We will build the following sections:
+      1. Header (Name, Role, Social Links)
+      2. About Me (Image, Bio)
+      3. Skills (Grid/Flex layout of tech stack)
+      4. Projects (Featured work)
+      5. Footer
+    -->
+
     <!-- Header Section -->
-    <header>
-      <h1>[Your Name Here]</h1>
-      <p>
-        [Your Role/Title] | [Another Role] |
-        <span style="color: var(--google-yellow)">[Fun Fact]</span>
-      </p>
+     <header>
+
+      <img class="corner-img left" src="https://media.tenor.com/tyKRuPLxVjEAAAAi/oi.gif"></img>
+      <img class="corner-img right" src="https://media.tenor.com/NRlBKLrZg3sAAAAi/cute-kawaii.gif"></img>
+      <h1>Melissa Marcaida</h1>
+      <p>Student | Aspiring Software Engineer | <span style="color: #cc3e87">Optimistic</span> </p>
 
       <div class="social-links">
-        <a href="#" target="_blank"><span>📧</span> Email</a>
-        <a href="#" target="_blank"><span>💼</span> LinkedIn</a>
-        <a href="#" target="_blank"><span>🐙</span> GitHub</a>
-        <a href="#" target="_blank"><span>🌐</span> GDG Profile</a>
+        <a href="https://www.facebook.com/profile.php?id=61581662293121">✉️ Email</a>
+        <a href="https://www.facebook.com/profile.php?id=61581662293121">💼 LinkedIn</a>
+        <a href="https://www.facebook.com/profile.php?id=61581662293121">🐙 Github</a>
+        <a href="https://www.facebook.com/profile.php?id=61581662293121">🌐 GDG Profile</a>
       </div>
-    </header>
 
-    <!-- Main Content -->
+     </header>
+
     <div class="container">
       <!-- About Section -->
-      <section id="about">
-        <h2>About Me</h2>
+       <section id="about">
+        <h1>About Me</h1>
         <div class="about-content">
-          <div class="about-image">
-            <!-- Replace with your own image -->
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/4712/4712139.png"
-              alt="Profile Picture"
-            />
+          <div class="about-img">
+            <img src="assets/me.jpg"></img>
           </div>
+
           <div class="about-text">
-            <p>
-              <strong>Hello!</strong> I'm a student at
-              <strong>PUP</strong>. This is my personal portfolio.
+            <p>You told me, "Think about it," well, I did (I did)
+                Now I don't wanna feel a thing anymore
+                I'm tired of beggin' for the things that I want
+                I'm over sleepin' like a dog on the floor
             </p>
-            <p style="margin-top: 15px">
-              [Write a brief introduction about yourself here.]
+            <br>
+            <p>You told me, "Think about it," well, I did (I did)
+                Now I don't wanna feel a thing anymore
+                I'm tired of beggin' for the things that I want
+                I'm over sleepin' like a dog on the floor
             </p>
           </div>
         </div>
-      </section>
+       </section>
 
       <!-- Skills Section -->
-      <section id="skills">
-        <h2>My Tech Stack</h2>
-        <div class="skills-container">
-          <div class="skill-item">
-            <h3>💻 Frontend</h3>
-            <p>HTML5, CSS3</p>
-          </div>
-          <!-- Add more skills here -->
-        </div>
-      </section>
 
       <!-- Projects Section -->
-      <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <span class="project-status completed">Demo</span>
-            <div>
-              <h3>Example Project</h3>
-              <p>
-                Description of your project goes here.
-              </p>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">View Code</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 
-        ========================================
-        🎯 POST-JAM ACTIVITY CHALLENGE
-        ========================================
-        
-        YOUR MISSION: Add 2 NEW SECTIONS to your portfolio!
-        
-        You decide what to build. Here are some ideas:
-        1. 🎓 Education: Your school, course, and achievements.
-        2. 🏆 Certifications: Awards, workshops, or badges.
-        3. 📸 Gallery: Photos of your hobbies, pets, or travels.
-        4. 🎵 Favorites: Your top movies, songs, or games.
-        5. 📝 Blog: A mini-blog with your recent thoughts.
-        6. 💬 Testimonials: Quotes from friends or mentors.
-        7. 📱 Contact: Your contact information.
-        8.   Interest: Your hobbies and interests.
-        
-        Instructions:
-        1. Choose 2 ideas from the list (or invent your own!).
-        2. Create <section> tags with unique IDs below.
-        3. Add content and style them in styles.css.
-      -->
-      
-      <!-- YOUR FIRST NEW SECTION -->
-      <!-- Example: <section id="my-hobby"> ... </section> -->
-      <section id="section-1">
-        <h2>[Your First New Section]</h2>
-        <p>Replace this with your chosen content!</p>
-      </section>
-
-      <!-- YOUR SECOND NEW SECTION -->
-      <!-- Example: <section id="favorites"> ... </section> -->
-      <section id="section-2">
-        <h2>[Your Second New Section]</h2>
-        <p>Replace this with your chosen content!</p>
-      </section>
-
-
     </div>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Randy Sparky Lorenzo. GDG on Campus PUP.</p>
-      <p>
-        Made with <span style="color: var(--google-red)">❤</span> and
-        <span style="color: var(--google-blue)">Code</span>
-      </p>
 
-    </footer>
-
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">↑</a>
+      <!-- Back to Top Button -->
   </body>
 </html>
