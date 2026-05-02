@@ -8,7 +8,7 @@
   Another benefit of using variables is that if we want to change a color, we only need to change it in one place (here) and it will be reflected everywhere the variable is used.
 */
 :root {
-  --google-blue: #4285f4;
+  --google-dark-pink: #cc3e87;
   --google-red: #ea4335;
   --google-yellow: #fbbc04;
   --google-green: #34a853;
@@ -30,7 +30,7 @@
   Basically, we want every single element on our page to start with no margin or padding, and we want to use the border-box model for box sizing.
 */
 * {
-  /*border: 1px red solid;*/
+  /*border: 1px red solid; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -68,7 +68,7 @@ header {
   padding: 80px 20px;
   text-align: center;
   position: relative; /*positioning sa parent?*/
-  border-bottom: 5px solid #cc3e87;
+  border-bottom: 5px solid var(--google-dark-pink);
 }
 
 header h1 {
@@ -121,28 +121,77 @@ header p {
 }
 /* Main Content & Section Styling */
 
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: var(--bg-card);
+  margin: 30px 0;
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid transparent; 
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.500);
+  transition: border-color 0.3s ease;
+}
+
+section h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  position: relative;
+
+}
+
+section h2::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -5px;
+  height: 4px;
+  width: 60px;
+  background-color: var(--google-dark-pink);
+}
+section:hover {
+  border-color: var(--bg-card-hover);
+}
 /* About Section */
 
-/*.about-content {
+.about-content {
   display: flex;
-} */
+  align-items: center;
+  gap: 40px;
+}
 
 .about-img {
   background-color: white;
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   overflow: hidden;
   border-radius: 50%;
   border: 2px solid #cc3e87;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .about-img img {
   height: auto;
   width: 100%;
-  border-radius: 100px; 
   object-fit: contain;
+  transition: trasform 0.3s ease;
+ /* padding: 5px; /*PROLLYREMOVE IT*/
+
 }
 
+.about-img img:hover {
+  transform: scale(1.1);
+}
+
+.about-text {
+  flex: 1;
+  color: var(--text-main);
+  font-size: 1.1em;
+}
 
 
 /* Skills Section */
