@@ -1,21 +1,12 @@
-
-/* GDG / Google Color Variables */
-/*
-  On this part, we define color variables based on Google's branding colors.
-
-  These color variables can then be reused throughout the entire CSS file without having to type the color code everytime we want to use them. 
-
-  Another benefit of using variables is that if we want to change a color, we only need to change it in one place (here) and it will be reflected everywhere the variable is used.
-*/
 :root {
   --google-dark-pink: #cc3e87;
   --google-light-pink: #f4428f;
+  --google--pink-text: #9e627c;
   --google-dark-red: #bb3e3e;
   --google-dark-brown: #b36d38;
   --google-red: #ea4335;
   --google-yellow: #fbbc04;
-  --google-green: #34a853;
-
+  --google--light-pink-text: #e8a1b9;
   /* Dark Mode Variables */
   --bg-body: #202124;
   --bg-card: #303134;
@@ -26,12 +17,6 @@
   --border-color: #5f6368;
 }
 
-/* Reset and Base Styles */
-/*
-  Here we reset some default browser styles and set base styles for the body and headings.
-
-  Basically, we want every single element on our page to start with no margin or padding, and we want to use the border-box model for box sizing.
-*/
 * {
   /*border: 1px red solid; */
   margin: 0;
@@ -39,15 +24,6 @@
   box-sizing: border-box;
 }
 
-/*
-  On this part, we set the base styles for the body and headings.
-
-  We set the font family to "Roboto", which is a popular Google font, and we set the line height for better readability.
-
-  We also set the text color and background color using the variables we defined earlier.
-
-  Finally, we set the overflow-x property to "hidden", which is used to hide the horizontal scroll bar. 
-*/
 body {
   font-family: "Pixelify Sans", pixelify -serif;
   line-height: 1.6;
@@ -55,34 +31,23 @@ body {
   background-color: var(--bg-body);
 }
 
-/* 
-  TODO: Live Coding Session Styles
-  
-  We will add styles for:
-  - Header
-  - Container
-  - Sections (About, Skills, Projects, Contact)
-  - Footer
-*/
+  /* Header Section */
+  header {
+    padding: 80px 20px;
+    text-align: center;
+    position: relative; /*positioning sa parent?*/
+    border-bottom: 5px solid var(--google-dark-pink);
+  }
 
+  header h1 {
+    font-size: 3.5em;
+  }
 
-/* Header Section */
-header {
-  padding: 80px 20px;
-  text-align: center;
-  position: relative; /*positioning sa parent?*/
-  border-bottom: 5px solid var(--google-dark-pink);
-}
-
-header h1 {
-  font-size: 3.5em;
-}
-
-header p {
- font-size: 1.3em; 
- margin-bottom: 30px;
- color: gray;
-}
+  header p {
+  font-size: 1.3em; 
+  margin-bottom: 30px;
+  color: gray;
+  }
 
 .corner-img {
   position: absolute;
@@ -93,12 +58,12 @@ header p {
 
 .corner-img.left {
   width: 6vw;
-  top: 125px;
+  top: 130px;
   left: 120px;
 }
 
 .corner-img.right {
-  top: 50px;
+  top: 12px;
   right: 100px;
 }
 
@@ -121,6 +86,7 @@ header p {
   color:var(--google-dark-pink);
   border-color: var(--google-light-pink);
 }
+
 /* Main Content & Section Styling */
 
 .container {
@@ -146,7 +112,7 @@ section h2 {
 
 }
 
-section h2::after {
+section h2:not(.favorites-subheading)::after {
   position: absolute;
   content: "";
   left: 0;
@@ -155,9 +121,11 @@ section h2::after {
   width: 60px;
   background-color: var(--google-dark-pink);
 }
+
 section:hover {
   border-color: var(--bg-card-hover);
 }
+
 /* About Section */
 
 .about-content {
@@ -177,9 +145,9 @@ section:hover {
 }
 
 .about-img img {
-  height: auto;
+  height: 180px;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.3s ease;
  /* padding: 5px; /*PROLLYREMOVE IT*/
 
@@ -204,12 +172,12 @@ section:hover {
   gap: 20px;
 }
 
-.skill-icon-text {
+.icon-text {
   display: flex;
   gap: 10px;
 }
 
-.skill-icon-text img {
+.icon-text img {
   width: 24px;
   height: 24px;
   transform: translateY(3px);
@@ -247,14 +215,194 @@ section:hover {
 .skill-card:nth-child(3) {
   border-top-color: var(--google-dark-red);
 }
+
 /* Projects Section */
 
+.projects-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
+.project-card {
+  background-color: var(--bg-card-hover);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  border-bottom: 4px solid var(--google-dark-pink);
+}
+
+.project-card img {
+  transform: translateY(7px);
+}
+
+.project-card:hover {
+  background-color: #45474a; 
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: var(--google--pink-text);
+}
+
+/* Favorites Section */
+
+/* Songs */
+section h2.favorites-subheading {
+  margin-bottom: 25px;
+  color: var(--google--light-pink-text); 
+}
+
+.favorites-subheading-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.favorite-songs-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.favorite-songs-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 10px 30px; /* top || left & right || bottom */
+
+  transition: transform 0.3s ease;
+}
+
+.favorite-songs-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Books */
+
+
+.favorite-book-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.favorite-book-card img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin: 0 10px 30px; /* top || left & right || bottom */
+
+  transition: transform 0.3s ease;
+}
+
+.favorite-book-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Anime */
+
+.favorite-anime-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: -30px;
+}
+
+.favorite-anime-card img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin: 0 7px 30px; /* top || left & right || bottom */
+  transition: transform 0.3s ease;
+}
+
+.favorite-anime-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Hobbies */
+
+.drawing-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap : 20px;
+  margin-top: 20px;
+}
+
+.drawing-gallery img{
+  width : 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-inline: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.drawing-gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+#hobbies-container p:nth-of-type(2) {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+#hobbies-container p {
+  font-size: 1.5em;
+}
 
 /* Footer */
 
-
+footer {
+  background: #171717;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
 
 /* Back to Top Button */
 
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--google-dark-pink);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  box-shadow: 0 4px 12px var(--google-light-pink);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
 
+.back-to-top:hover {
+  background-color: var(--google-dark-red);
+  box-shadow: 0 6px 16px rgba(234, 71, 53, 0.4);
+}
